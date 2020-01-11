@@ -10,14 +10,14 @@ package DocSurgeryManagement;
  * @author C-bre
  */
 public class UserInfo {
-    protected String role;
+    protected String ID;
     protected String name;
     protected String address;
     protected String sex;
     protected int age;
     
     public String getRole(){
-        return role;
+        return ID;
     }
     
     public String getName(){

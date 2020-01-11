@@ -10,9 +10,13 @@ package DocSurgeryManagement;
  * @author C-bre
  */
 public class Medicine {
-    String name;
+    protected String name;
     
-    public void Medicine (String name){
+    public String getName(){
+        return name;
+    }
+    
+    public void setName(String name){
         this.name = name;
     }
 }

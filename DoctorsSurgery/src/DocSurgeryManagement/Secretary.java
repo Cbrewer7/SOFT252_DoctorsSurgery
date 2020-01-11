@@ -9,13 +9,10 @@ package DocSurgeryManagement;
  *
  * @author C-bre
  */
-public class Secretary {
-    String role;
-    String name;
-    String address;
+public class Secretary extends UserInfo {
     
-    public void Secretary(String role, String name, String address){
-        this.role = role;
+    public void Secretary(String ID, String name, String address){
+        this.ID = ID;
         this.name = name;
         this.address = address;
     }

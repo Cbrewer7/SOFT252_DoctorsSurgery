@@ -9,13 +9,10 @@ package DocSurgeryManagement;
  *
  * @author C-bre
  */
-public class Admin {
-    String role;
-    String name;
-    String address;
+public class Admin extends UserInfo{
     
-    public void Admin(String role, String name, String address){
-        this.role = role;
+    public void Admin(String ID, String name, String address){
+        this.ID = ID;
         this.name = name;
         this.address = address;
     }

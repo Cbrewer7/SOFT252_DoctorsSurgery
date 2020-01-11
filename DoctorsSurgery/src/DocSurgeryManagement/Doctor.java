@@ -9,13 +9,10 @@ package DocSurgeryManagement;
  *
  * @author C-bre
  */
-public class Doctor {
-    String role;
-    String name;
-    String address;
+public class Doctor extends UserInfo{
     
-    public void Doctor(String role, String name, String address){
-        this.role = role;
+    public void Doctor(String docID, String name, String address){
+        this.ID = docID;
         this.name = name;
         this.address = address;
     }
