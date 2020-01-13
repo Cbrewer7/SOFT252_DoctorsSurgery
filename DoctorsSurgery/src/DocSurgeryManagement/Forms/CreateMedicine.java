@@ -42,6 +42,11 @@ public class CreateMedicine extends javax.swing.JFrame {
 
         B_Medicine.setText("Create Medicine");
         B_Medicine.setToolTipText("");
+        B_Medicine.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_MedicineActionPerformed(evt);
+            }
+        });
 
         B_Back.setText("Back");
         B_Back.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +93,10 @@ public class CreateMedicine extends javax.swing.JFrame {
         MenuDoctor c = new MenuDoctor();
         c.setVisible(true);
     }//GEN-LAST:event_B_BackActionPerformed
+
+    private void B_MedicineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_MedicineActionPerformed
+        
+    }//GEN-LAST:event_B_MedicineActionPerformed
 
     /**
      * @param args the command line arguments

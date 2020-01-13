@@ -157,7 +157,8 @@ public class Login extends javax.swing.JFrame {
         }
         else {
             
-            // SHOW WRONG ID OR PW DIALOG!
+            JOptionPane.showMessageDialog(null, "Message: You have entered either the wrong username or password. Please try again", "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
+            
         }
     }//GEN-LAST:event_B_LoginActionPerformed
  

@@ -1,10 +1,10 @@
 
 package DocSurgeryManagement;
 
-import DocSurgeryManagement.Forms.MenuAdmin;
-import DocSurgeryManagement.Forms.MenuDoctor;
-import DocSurgeryManagement.Forms.MenuPatient;
-import DocSurgeryManagement.Forms.MenuSecretary;
+/**
+ *
+ * @author C-bre
+ */
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,6 +41,7 @@ public class DataManager {
                         
             while (scanner.hasNextLine()) {
                 
+                //User Data
                 UserType = scanner.nextLine();
                 UserID = scanner.nextLine();
                 SecretPw = scanner.nextLine();
@@ -51,24 +52,29 @@ public class DataManager {
                 
                 switch(UserType)
                 {
+                    //Bring up user data based on key word
                     case "ADMIN":
                     {
-                        UserList.add(new Admin(UserID, SecretPw, Name, Address, Sex, Age));
+                        UserInfo ad = new Admin(UserID, SecretPw, Name, Address, Sex, Age);
+                        UserList.add(ad);
                     }
                     break;
                     case "SECRETARY":
                     {
-                        UserList.add(new Secretary(UserID, SecretPw, Name, Address, Sex, Age));
+                        UserInfo sc = new Doctor(UserID, SecretPw, Name, Address, Sex, Age);
+                        UserList.add(sc);
                     }
                     break;
                     case "DOCTOR":
                     {
-                        UserList.add(new Doctor(UserID, SecretPw, Name, Address, Sex, Age));
+                        UserInfo dc = new Doctor(UserID, SecretPw, Name, Address, Sex, Age);
+                        UserList.add(dc);
                     }
                     break;
                     case "PATIENT": // hope they die
                     {
-                        UserList.add(new Patient(UserID, SecretPw, Name, Address, Sex, Age));
+                        UserInfo pt = new Patient(UserID, SecretPw, Name, Address, Sex, Age);
+                        UserList.add(pt);
                     }
                     break;
                 }
@@ -102,31 +108,31 @@ public class DataManager {
         }
     }
     
-    public static boolean UserRegister(String _userType, String _ID, String _Password, String _Name, String _Address, String _Sex, Integer _Age) {
+    public static boolean UserRegister(String userType, String ID, String password, String name, String address, String sex, Integer age) {
         
-            switch (_userType)
+            switch (userType)
             {
                 case "ADMIN":
                 {
-                    Admin u = new Admin(_ID, _Password, _Name, _Address, _Sex, _Age);
+                    Admin u = new Admin(ID, password, name, address, sex, age);
                     UserList.add(u);
                 }
                 break;
                 case "SECRETARY":
                 {
-                    Secretary u = new Secretary(_ID, _Password, _Name, _Address, _Sex, _Age);
+                    Secretary u = new Secretary(ID, password, name, address, sex, age);
                     UserList.add(u);
                 }
                 break;
                 case "DOCTOR":
                 {
-                    Doctor u = new Doctor(_ID, _Password, _Name, _Address, _Sex, _Age);
+                    Doctor u = new Doctor(ID, password, name, address, sex, age);
                     UserList.add(u);
                 }
                 break;
                 case "PATIENT":
                 {
-                    Patient u = new Patient(_ID, _Password, _Name, _Address, _Sex, _Age);
+                    Patient u = new Patient(ID, password, name, address, sex, age);
                     UserList.add(u);
                 }
                 break;
@@ -134,12 +140,11 @@ public class DataManager {
         
        try {
             UserWrite();
+            return true;
         }
         catch (Exception e) {
             System.out.println("Exception: " + e);
         }
-            
-            
         return false;
     }
     

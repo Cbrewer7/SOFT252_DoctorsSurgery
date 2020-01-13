@@ -104,7 +104,7 @@ public class MenuAdmin extends javax.swing.JFrame {
 
     private void B_CreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_CreateAccountActionPerformed
         dispose();
-        CreateSecretary c = new CreateSecretary();
+        CreateAccountAdmin c = new CreateAccountAdmin();
         c.setVisible(true);
     }//GEN-LAST:event_B_CreateAccountActionPerformed
 

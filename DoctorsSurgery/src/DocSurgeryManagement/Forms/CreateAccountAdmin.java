@@ -35,6 +35,8 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
         B_CreateAccount = new javax.swing.JButton();
         D_Sex = new javax.swing.JComboBox<>();
         B_Back = new javax.swing.JButton();
+        T_UserID = new javax.swing.JTextField();
+        T_Password = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -78,31 +80,50 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
             }
         });
 
+        T_UserID.setText("ID");
+        T_UserID.setName("T_Name"); // NOI18N
+        T_UserID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_UserIDActionPerformed(evt);
+            }
+        });
+
+        T_Password.setText("Password");
+        T_Password.setName("T_Name"); // NOI18N
+        T_Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_PasswordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(B_Back)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                        .addComponent(B_CreateAccount))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(D_Sex, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(T_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(T_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(61, 61, 61))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(B_Back)
+                    .addComponent(D_Sex, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(T_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(T_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(T_UserID, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(B_CreateAccount)
+                    .addComponent(T_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(T_UserID, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(T_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(T_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(T_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -110,7 +131,7 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
                 .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(D_Sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_CreateAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(B_Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -136,7 +157,7 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
 
     private void B_CreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_CreateAccountActionPerformed
 
-        JOptionPane.showMessageDialog(null, "Message: Your account has been submitted for approval.", "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
+        
 
         
         // TODO add your handling code here:
@@ -147,6 +168,14 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
         MenuAdmin c = new MenuAdmin();
         c.setVisible(true);
     }//GEN-LAST:event_B_BackActionPerformed
+
+    private void T_UserIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_UserIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_UserIDActionPerformed
+
+    private void T_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_PasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_PasswordActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,5 +220,7 @@ public class CreateAccountAdmin extends javax.swing.JFrame {
     private javax.swing.JTextField T_Address;
     private javax.swing.JTextField T_Age;
     private javax.swing.JTextField T_Name;
+    private javax.swing.JTextField T_Password;
+    private javax.swing.JTextField T_UserID;
     // End of variables declaration//GEN-END:variables
 }

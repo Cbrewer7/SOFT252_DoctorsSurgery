@@ -6,7 +6,6 @@
 package DocSurgeryManagement.Forms;
 
 import DocSurgeryManagement.DataManager;
-import DocSurgeryManagement.Patient;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,8 +34,10 @@ public class CreateAccount extends javax.swing.JFrame {
         T_Address = new javax.swing.JTextField();
         T_Age = new javax.swing.JTextField();
         B_CreateAccount = new javax.swing.JButton();
-        D_Sex = new javax.swing.JComboBox<>();
         B_Back = new javax.swing.JButton();
+        T_Password = new javax.swing.JTextField();
+        T_UserID = new javax.swing.JTextField();
+        T_Sex = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -55,20 +56,13 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
-        T_Age.setText("Age");
+        T_Age.setText("22");
 
         B_CreateAccount.setText("Create Account");
         B_CreateAccount.setToolTipText("");
         B_CreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 B_CreateAccountActionPerformed(evt);
-            }
-        });
-
-        D_Sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
-        D_Sex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                D_SexActionPerformed(evt);
             }
         });
 
@@ -80,39 +74,68 @@ public class CreateAccount extends javax.swing.JFrame {
             }
         });
 
+        T_Password.setText("Password");
+        T_Password.setName("T_Name"); // NOI18N
+        T_Password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_PasswordActionPerformed(evt);
+            }
+        });
+
+        T_UserID.setText("UserID");
+        T_UserID.setName("T_Name"); // NOI18N
+        T_UserID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_UserIDActionPerformed(evt);
+            }
+        });
+
+        T_Sex.setText("Sex");
+        T_Sex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_SexActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(T_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(T_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(T_UserID, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(T_Sex, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(B_Back)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                        .addComponent(B_CreateAccount))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(D_Sex, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(T_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(T_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(61, 61, 61))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(T_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(B_CreateAccount))
+                        .addGap(31, 31, 31))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(T_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(T_UserID, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(T_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(T_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(D_Sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addComponent(T_Sex, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_CreateAccount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(B_Back, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -128,71 +151,67 @@ public class CreateAccount extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_T_AddressActionPerformed
 
-    private void D_SexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D_SexActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_D_SexActionPerformed
-
     private void T_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_NameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_T_NameActionPerformed
 
     private void B_CreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_CreateAccountActionPerformed
 
-        //String inPw = jTextFieldPassword.getText();
-        //String inFullName = jTextFieldFullName.getText();
-        //String inAddress = jTextFieldAddress.getText();
-        //String inAge = jTextFieldAge.getText();
-        //String inGender = jTextFieldGender.getText();
-        //
-        //if (!(inPw.length() >= 4 && inPw.length() <= 16)) {
-        //    JOptionPane.showMessageDialog(null, 
-        //        "Password should be between 4 and 16 characters long.", 
-        //        "Register Error", 
-        //        JOptionPane.WARNING_MESSAGE);
-        //    
-        //    return;
-        //}
-        //
-        //if (!(inFullName.length() >= 4 && inFullName.length() <= 64)) {
-        //    JOptionPane.showMessageDialog(null, 
-        //        "Full name should be between 3 and 64 characters long.", 
-        //        "Register Error", 
-        //        JOptionPane.WARNING_MESSAGE);
-        //    
-        //    return;
-        //}
-        //
-        //if (!(inAddress.length() >= 4 && inAddress.length() <= 128)) {
-        //    JOptionPane.showMessageDialog(null, 
-        //        "Address should be between 4 and 128 characters long.", 
-        //        "Register Error", 
-        //        JOptionPane.WARNING_MESSAGE);
-        //    
-        //    return;
-        //}
+        String inID = T_UserID.getText();
+        String inPassword = T_Password.getText();
+        String inFullName = T_Name.getText();
+        String inAddress = T_Address.getText();
+        String inAge = T_Age.getText();
+        String inSex = T_Sex.getText();
         
-        boolean IsPatientCreated = DataManager.UserRegister("PATIENT", "ID", "Passowrd", "Name", "Address", "Sex", 12);
-        
-        if (IsPatientCreated) {
+        if (!(inPassword.length() >= 4 && inPassword.length() <= 16)) {
+            JOptionPane.showMessageDialog(null, 
+                "Password should be between 4 and 16 characters long.", 
+                "Register Error", 
+                JOptionPane.WARNING_MESSAGE);
             
-            // SHOW THE PATIENT FORM (AUTOMATIC LOGIN)
-            
-            
-        } else {
+            return;
+        }
         
-            // SHOW ERROR DIALOG (UNKNOWN ERROR. PLEASE CONTACT ADMIN BLABLA)
+        if (!(inFullName.length() >= 4 && inFullName.length() <= 64)) {
+            JOptionPane.showMessageDialog(null, 
+                "Full name should be between 3 and 64 characters long.", 
+                "Register Error", 
+                JOptionPane.WARNING_MESSAGE);
+         
+            return;
+        }
         
+        if (!(inAddress.length() >= 4 && inAddress.length() <= 128)) {
+            JOptionPane.showMessageDialog(null, 
+                "Address should be between 4 and 128 characters long.", 
+                "Register Error", 
+                JOptionPane.WARNING_MESSAGE);
+            
+            return;
+        }
+        
+        if (DataManager.UserFindByID(inID) != null) {
+            
+JOptionPane.showMessageDialog(null, "THIS IS ALREADY EXISTS.", "SOMETHING WENT WRONG", JOptionPane.INFORMATION_MESSAGE);
+        
+            return;
         }
         
         
+        boolean IsPatientCreated = DataManager.UserRegister("PATIENT", inID, inPassword, inFullName, inAddress, inSex, Integer.parseInt(inAge));
         
+        if (IsPatientCreated) {
+            dispose();
+            Login c = new Login();
+            c.setVisible(true);
+        } else {
         
+            JOptionPane.showMessageDialog(null, "Message: Something has gone wrong, please contact the system administrator.", "SOMETHING WENT WRONG", JOptionPane.INFORMATION_MESSAGE);
         
-        
-        
-        JOptionPane.showMessageDialog(null, "Message: Your account has been submitted for approval.", "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
+        }
+        //JOptionPane.showMessageDialog(null, "Message: Your account has been submitted for approval.", "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
 
-        
         // TODO add your handling code here:
     }//GEN-LAST:event_B_CreateAccountActionPerformed
 
@@ -201,6 +220,18 @@ public class CreateAccount extends javax.swing.JFrame {
         Login c = new Login();
         c.setVisible(true);
     }//GEN-LAST:event_B_BackActionPerformed
+
+    private void T_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_PasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_PasswordActionPerformed
+
+    private void T_UserIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_UserIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_UserIDActionPerformed
+
+    private void T_SexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_SexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_SexActionPerformed
 
     /**
      * @param args the command line arguments
@@ -240,9 +271,11 @@ public class CreateAccount extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Back;
     private javax.swing.JButton B_CreateAccount;
-    private javax.swing.JComboBox<String> D_Sex;
     private javax.swing.JTextField T_Address;
     private javax.swing.JTextField T_Age;
     private javax.swing.JTextField T_Name;
+    private javax.swing.JTextField T_Password;
+    private javax.swing.JTextField T_Sex;
+    private javax.swing.JTextField T_UserID;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,22 +1,56 @@
 ADMIN
 A1234
-secretpw
-NoNameHehe
-PL4 6PJ BLA BLA
+password
+Mario
+Mushroom Kingdom
 Male
-12
+30
 PATIENT
 P1234
-asfasfasd
-patitneettt
-LONDON XX
-Gay
+password
+Luke Skywalker
+Tatooine
+Male
 22
 PATIENT
-ID
-Passowrd
-Name
-Address
-Sex
-12
-
+P4321
+password
+Lara Croft
+London
+Female
+28
+PATIENT
+P3214
+password
+John Wick
+New York
+Male
+37
+DOCTOR
+D1234
+password
+Doctor Strange
+New York
+Male
+45
+DOCTOR
+D4321
+password
+The
+Galifray
+Male
+99
+DOCTOR
+D3214
+password
+Dr Rose
+Plymouth
+Female
+31
+DOCTOR
+S1234
+password
+Betty Boop
+Plymouth
+Female
+24

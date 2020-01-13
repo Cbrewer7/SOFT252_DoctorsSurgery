@@ -1,7 +1,7 @@
 package DocSurgeryManagement;
 
 /**
- * CONCRETE CLASS!!!
+ * 
  * @author C-bre
  */
 public class Secretary extends UserInfo {

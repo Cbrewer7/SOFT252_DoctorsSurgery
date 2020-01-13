@@ -66,6 +66,9 @@
         <Property name="text" type="java.lang.String" value="Create Medicine"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_MedicineActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="B_Back">
       <Properties>

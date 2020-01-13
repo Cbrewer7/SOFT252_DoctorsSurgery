@@ -6,7 +6,7 @@
 package DocSurgeryManagement;
 
 /**
- * ABSTRACT CLASS!!
+ * 
  * @author C-bre
  */
 public abstract class UserInfo {
