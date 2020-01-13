@@ -5,6 +5,8 @@
  */
 package DocSurgeryManagement.Forms;
 
+import DocSurgeryManagement.DataManager;
+import DocSurgeryManagement.Patient;
 import javax.swing.JOptionPane;
 
 /**
@@ -136,6 +138,58 @@ public class CreateAccount extends javax.swing.JFrame {
 
     private void B_CreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_CreateAccountActionPerformed
 
+        //String inPw = jTextFieldPassword.getText();
+        //String inFullName = jTextFieldFullName.getText();
+        //String inAddress = jTextFieldAddress.getText();
+        //String inAge = jTextFieldAge.getText();
+        //String inGender = jTextFieldGender.getText();
+        //
+        //if (!(inPw.length() >= 4 && inPw.length() <= 16)) {
+        //    JOptionPane.showMessageDialog(null, 
+        //        "Password should be between 4 and 16 characters long.", 
+        //        "Register Error", 
+        //        JOptionPane.WARNING_MESSAGE);
+        //    
+        //    return;
+        //}
+        //
+        //if (!(inFullName.length() >= 4 && inFullName.length() <= 64)) {
+        //    JOptionPane.showMessageDialog(null, 
+        //        "Full name should be between 3 and 64 characters long.", 
+        //        "Register Error", 
+        //        JOptionPane.WARNING_MESSAGE);
+        //    
+        //    return;
+        //}
+        //
+        //if (!(inAddress.length() >= 4 && inAddress.length() <= 128)) {
+        //    JOptionPane.showMessageDialog(null, 
+        //        "Address should be between 4 and 128 characters long.", 
+        //        "Register Error", 
+        //        JOptionPane.WARNING_MESSAGE);
+        //    
+        //    return;
+        //}
+        
+        boolean IsPatientCreated = DataManager.UserRegister("PATIENT", "ID", "Passowrd", "Name", "Address", "Sex", 12);
+        
+        if (IsPatientCreated) {
+            
+            // SHOW THE PATIENT FORM (AUTOMATIC LOGIN)
+            
+            
+        } else {
+        
+            // SHOW ERROR DIALOG (UNKNOWN ERROR. PLEASE CONTACT ADMIN BLABLA)
+        
+        }
+        
+        
+        
+        
+        
+        
+        
         JOptionPane.showMessageDialog(null, "Message: Your account has been submitted for approval.", "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
 
         

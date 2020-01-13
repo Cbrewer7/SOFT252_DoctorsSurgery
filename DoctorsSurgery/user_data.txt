@@ -1,0 +1,22 @@
+ADMIN
+A1234
+secretpw
+NoNameHehe
+PL4 6PJ BLA BLA
+Male
+12
+PATIENT
+P1234
+asfasfasd
+patitneettt
+LONDON XX
+Gay
+22
+PATIENT
+ID
+Passowrd
+Name
+Address
+Sex
+12
+

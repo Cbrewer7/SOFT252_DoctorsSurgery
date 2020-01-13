@@ -1,19 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DocSurgeryManagement;
 
 /**
- *
+ * CONCRETE CLASS!!!
  * @author C-bre
  */
 public class Secretary extends UserInfo {
     
-    public void Secretary(String ID, String name, String address){
-        this.ID = ID;
-        this.name = name;
-        this.address = address;
+    public Secretary(String _ID, String _Password, String _Name, String _Address, String _Sex, Integer _Age)
+    {
+        super(_ID, _Password, _Name, _Address, _Sex, _Age);
+    }
+    
+    @Override
+    public String getType() {
+        return "SECRETARY";
     }
 }

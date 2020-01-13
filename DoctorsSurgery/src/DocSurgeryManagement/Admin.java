@@ -11,9 +11,13 @@ package DocSurgeryManagement;
  */
 public class Admin extends UserInfo{
     
-    public void Admin(String ID, String name, String address){
-        this.ID = ID;
-        this.name = name;
-        this.address = address;
+    public Admin(String _ID, String _Password, String _Name, String _Address, String _Sex, Integer _Age)
+    {
+        super(_ID, _Password, _Name, _Address, _Sex, _Age);
+    }
+    
+    @Override
+    public String getType() {
+        return "ADMIN";
     }
 }

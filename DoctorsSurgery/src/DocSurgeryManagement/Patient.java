@@ -11,11 +11,13 @@ package DocSurgeryManagement;
  */
 public class Patient extends UserInfo {
     
-    public void Patient(String patientID, String name, String address, String sex, int age){
-        this.ID = patientID;
-        this.name = name;
-        this.address = address;
-        this.sex = sex;
-        this.age = age;
+    public Patient(String _ID, String _Password, String _Name, String _Address, String _Sex, Integer _Age)
+    {
+        super(_ID, _Password, _Name, _Address, _Sex, _Age);
+    }
+    
+    @Override
+    public String getType() {
+        return "PATIENT";
     }
 }

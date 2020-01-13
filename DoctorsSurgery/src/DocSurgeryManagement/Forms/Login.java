@@ -5,6 +5,10 @@
  */
 package DocSurgeryManagement.Forms;
 
+import DocSurgeryManagement.DataManager;
+import static DocSurgeryManagement.DataManager.initializeDataManager;
+import DocSurgeryManagement.Patient;
+import DocSurgeryManagement.UserInfo;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +22,9 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        
+        // start data manager
+        initializeDataManager();
     }
 
     /**
@@ -33,6 +40,8 @@ public class Login extends javax.swing.JFrame {
         B_Login = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         B_Register = new javax.swing.JButton();
+        T_UserPassword = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -54,6 +63,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        T_UserPassword.setText("Enter Password ID");
+
+        jLabel2.setText("User Password");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -61,6 +74,8 @@ public class Login extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(T_UserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(T_UserID, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(B_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -76,7 +91,11 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(T_UserID, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addGap(9, 9, 9)
+                .addComponent(T_UserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_Login)
                     .addComponent(B_Register))
@@ -87,16 +106,59 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_LoginActionPerformed
-        String userID = T_UserID.getText();
+        String UserID = T_UserID.getText();
+        String UserPassword = T_UserPassword.getText();
         
-        JOptionPane.showMessageDialog(null, "UserID:" + userID, "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
+        // TODO: CHECK LENGTH OF USER ID AND PW BEFORE CONTROL AND SHOW MESSAGE DIALOG!!
+        // JOptionPane.showMessageDialog(null, "UserID:" + userID, "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
         
+        //if (!(UserID.length() >= 4 && UserID.length() <= 16)) {
+        //    JOptionPane.showMessageDialog(null, 
+        //        "Password should be between 4 and 16 characters long.", 
+        //        "Register Error", 
+        //        JOptionPane.WARNING_MESSAGE);
+        //    
+        //    return;
+        //}
         
-        dispose();
-        MenuPatient c = new MenuPatient();
-        c.setVisible(true);
+        UserInfo userFound = DataManager.UserFindByID(UserID);
         
-        
+        if (userFound != null && userFound.getPassword().equals(UserPassword)) {
+                
+            switch (userFound.getType())
+            {
+                case "ADMIN":
+                {
+                    MenuAdmin c = new MenuAdmin();
+                    c.setVisible(true);
+                }
+                break;
+                case "SECRETARY":
+                {
+                    MenuSecretary c = new MenuSecretary();
+                    c.setVisible(true);
+                }
+                break;
+                case "DOCTOR":
+                {
+                    MenuDoctor c = new MenuDoctor();
+                    c.setVisible(true);
+                }
+                break;
+                case "PATIENT":
+                {
+                    MenuPatient c = new MenuPatient();
+                    c.setVisible(true);
+                }
+                break;
+            }
+            
+            this.dispose();
+        }
+        else {
+            
+            // SHOW WRONG ID OR PW DIALOG!
+        }
     }//GEN-LAST:event_B_LoginActionPerformed
  
     private void B_RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_RegisterActionPerformed
@@ -144,6 +206,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton B_Login;
     private javax.swing.JButton B_Register;
     private javax.swing.JTextField T_UserID;
+    private javax.swing.JTextField T_UserPassword;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
