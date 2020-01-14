@@ -164,6 +164,15 @@ public class CreateAccount extends javax.swing.JFrame {
         String inAge = T_Age.getText();
         String inSex = T_Sex.getText();
         
+        if (!(inID.length() == 5 && inID.length() <= 5)) {
+            JOptionPane.showMessageDialog(null, 
+                "User ID should must include a letter indicating user type and 4 digits afterwards.", 
+                "Register Error", 
+                JOptionPane.WARNING_MESSAGE);
+            
+            return;
+        }
+        
         if (!(inPassword.length() >= 4 && inPassword.length() <= 16)) {
             JOptionPane.showMessageDialog(null, 
                 "Password should be between 4 and 16 characters long.", 
