@@ -109,20 +109,19 @@ public class Login extends javax.swing.JFrame {
         String UserID = T_UserID.getText();
         String UserPassword = T_UserPassword.getText();
         
-        // TODO: CHECK LENGTH OF USER ID AND PW BEFORE CONTROL AND SHOW MESSAGE DIALOG!!
-        // JOptionPane.showMessageDialog(null, "UserID:" + userID, "MESSAGE TITLE", JOptionPane.INFORMATION_MESSAGE);
-        
-        //if (!(UserID.length() >= 4 && UserID.length() <= 16)) {
-        //    JOptionPane.showMessageDialog(null, 
-        //        "Password should be between 4 and 16 characters long.", 
-        //        "Register Error", 
-        //        JOptionPane.WARNING_MESSAGE);
-        //    
-        //    return;
-        //}
+        //Check password length
+        if (!(UserID.length() >= 4 && UserID.length() <= 16)) {
+            JOptionPane.showMessageDialog(null, 
+                "Password should be between 4 and 16 characters long.", 
+                "Register Error", 
+                JOptionPane.WARNING_MESSAGE);
+            
+            return;
+        }
         
         UserInfo userFound = DataManager.UserFindByID(UserID);
         
+        //Go to relevent page dependent on user info e.g. "PATIENT"
         if (userFound != null && userFound.getPassword().equals(UserPassword)) {
                 
             switch (userFound.getType())

@@ -17,7 +17,7 @@ public abstract class UserInfo {
     private String Sex;
     private int Age;
     
-    // constructor
+    // constructor create user info variables
     public UserInfo(String _ID, String _Password, String _Name, String _Address, String _Sex, Integer _Age)
     {
         this.ID = _ID;

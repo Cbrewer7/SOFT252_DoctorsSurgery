@@ -82,6 +82,7 @@ public class DataManager {
         }
     }
     
+    //Write new file for user data
     static public void UserWrite() throws Exception
     {
         FileOutputStream fos = new FileOutputStream(new File("user_data.txt"));
@@ -108,6 +109,7 @@ public class DataManager {
         }
     }
     
+    //Create data dependant on keyword e.g. "ADMIN"
     public static boolean UserRegister(String userType, String ID, String password, String name, String address, String sex, Integer age) {
         
             switch (userType)
